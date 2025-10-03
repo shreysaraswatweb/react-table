@@ -63,6 +63,7 @@ form{
   transition: all 0.2s 0.7s ease-in-out;
   overflow: hidden;
   backface-visibility: hidden;
+  z-index: 10;
 }
 
 form.sign-up-form {
@@ -248,76 +249,6 @@ form.sign-in-form {
 }
 
 /* Responsive */
-/* @media (max-width: 870px) {
-  .container {
-    min-height: 800px;
-    height: 100vh;
-  }
-  .container:before, .panels-container{
-    width: 1500px;
-    height: 1500px;
-    left: 30%;
-    bottom: 68%;
-    transform: translateX(-50%);
-    top: initial;
-    right: initial;
-    transition: 2s ease-in-out;
-  }
-
-  .signin-signup {
-    width: 80%;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    transition: 1s 0.8s ease-in-out;
-  }
-  .panels-container{
-    grid: template columns 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
-  }
-  .panel {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2.5rem 8%;
-  }
-  .panel .content {
-    padding-right: 15%;
-  }
-  .panel h3 {
-    font-size: 1.2rem;
-  }
-  .panel p {
-    font-size: 0.7rem;
-    padding: 0.5rem 0;
-  }
-  .btn.transparent {
-    width: 110px;
-    height: 35px;
-    font-size: 0.7rem;
-  }
-  .image{
-    width: 200px;
-    transition: transform 0.9s ease-in-out;
-    transition-delay: 0.6s;
-  }
-  .left-panel{
-    grid-row: 1/2;
-  }
-  .right-panel{
-    grid-row: 3/4;
-  }
-
-  .right-panel .content, .right-panel .image{
-    transform: translateY(300px);
-  }
-  .container.sign-up-mode:before {
-    transform: translate(-50%, 100%);
-    bottom: 32%;
-    right: initial;
-    left: 30%;
-  } 
-} */
  @media (max-width: 870px) {
   .container {
     min-height: 800px;
@@ -337,7 +268,7 @@ form.sign-in-form {
     top: initial;
     right: initial;
     transition: 2s ease-in-out;
-    z-index: 2;
+    z-index: 1;
   }
 
   .signin-signup {
@@ -346,7 +277,7 @@ form.sign-in-form {
     left: 50%;
     transform: translate(-50%, -100%);
     transition: 1s 0.8s ease-in-out;
-    z-index: 1;
+    z-index: 0;
   }
 
   .panels-container {
@@ -356,7 +287,7 @@ form.sign-in-form {
     grid-template-rows: 1fr 2fr 1fr;
     gap: 2rem;
     width: 100%;
-    z-index: 5;
+    z-index: 1;
   }
   .panel {
     flex-direction: row;
@@ -432,3 +363,33 @@ form.sign-in-form {
     left: 50%; ;  
   }
 } 
+@media (max-width: 420px) {
+  form {
+    padding: 0 1.5rem;
+  }
+  .panel .content {
+    text-align: center; 
+    padding: 1rem 2rem; 
+  }
+  .image {
+    /* width: 150px; */
+    display: none;
+  }
+  .container::before{
+    bottom: 72%;
+    left: 50%; ;
+  }
+  .container.sign-up-mode::before{
+    bottom: 28%;
+    left: 50%; ;  
+  }
+} 
+
+
+.container:before,
+.panels-container {
+  pointer-events: none; /* allow clicks to go through */
+}
+.signin-signup {
+  pointer-events: all; /* ensure form is interactive */
+}
