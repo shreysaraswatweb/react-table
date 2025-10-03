@@ -5,7 +5,6 @@ import registerSvg from "./assets/images/register.svg";
 
 function App() {
   const [isSignUpMode, setIsSignUpMode] = useState(false);
-  // const [isSignInMode, setIsSignMode] = useState(false);
 
 
   return (
@@ -13,7 +12,7 @@ function App() {
       <div className="forms-container">
         <div className="signin-signup">
           {/* Sign In Form */}
-          <form action="" className="sign-in-form">
+          <form action="" className="sign-in-form"> 
             <h2 className="title">Sign in</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
