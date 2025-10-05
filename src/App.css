@@ -249,6 +249,14 @@ form.sign-in-form {
 }
 
 /* Responsive */
+ @media (min-width: 870px) {
+  .container {
+    min-height: 800px;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* prevent side scroll */
+  }
+}
  @media (max-width: 870px) {
   .container {
     min-height: 800px;
