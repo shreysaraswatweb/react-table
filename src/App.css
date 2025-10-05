@@ -251,10 +251,7 @@ form.sign-in-form {
 /* Responsive */
  @media (min-width: 1537px) {
   .container {
-    min-height: 800px;
-    height: 100vh;
-    width: 100%;
-    overflow-x: hidden; /* prevent side scroll */
+    width: 100% !important;
   }
 }
  @media (max-width: 870px) {
